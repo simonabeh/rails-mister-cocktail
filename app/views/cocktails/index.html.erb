@@ -2,9 +2,17 @@
   <h1>Cocktails</h1>
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </div>
+      <% if cocktail.photo.blank? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/300/300/?random');">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+      <% else %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, width: 400, height: 300, crop: :thumb, gravity: :face %>')">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
+
+
