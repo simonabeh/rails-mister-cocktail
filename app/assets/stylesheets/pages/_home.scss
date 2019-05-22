@@ -1,41 +1,20 @@
-// Specific CSS for your home-page
-.cards {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  grid-gap: 16px;
+a {
+  color: white;
+  border: 1px solid white;
+  padding: 2px;
+}
+.card-category > a:hover {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 3px;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+h1 {
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+h2 {
+  margin: 20px 0px;
 }
